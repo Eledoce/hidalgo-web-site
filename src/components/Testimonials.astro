@@ -1,0 +1,66 @@
+---
+import Card from './Card.astro'
+---
+
+<section class="relative">
+  {
+    /* Section background (needs .relative class on parent and next sibling elements) */
+  }
+  <div
+    class="absolute inset-0 top-1/2 md:mt-24 lg:mt-0 bg-stone-900 pointer-events-none"
+    aria-hidden="true"
+  >
+  </div>
+  <div
+    class="absolute left-0 right-0 bottom-0 m-auto w-px p-px h-20 bg-stone-200 transform translate-y-1/2"
+  >
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="py-12 md:py-20">
+      {/* Section header */}
+      <div class="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+        <h2 class="h2 mb-4">Opiniones</h2>
+        <p class="text-xl text-stone-600">
+          Nos enorgullece compartir algunas de las experiencias que otros han
+          tenido al elegir nuestros servicios
+        </p>
+      </div>
+
+      {/* Items */}
+      <div
+        class="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none"
+      >
+        <Card
+          title="Reyna Gama"
+          description="Muy buena atención, servicio, los precios son accesibles, extenso surtido, resuelven tus dudas con amabilidad, recomendado al 100%"
+        />
+
+        <Card
+          title="Ric Arce"
+          description="En estos momentos difíciles, se pueden encontrar productos de calidad y a precios muy competitivos."
+        />
+
+        <Card
+          title="Edith Estudillo"
+          description="Que tienen unos excelentes productos para el hogar de muy buena calidad a un super precio! yo quede encantada con la bomba de agua de las mejores inversiones que eh hecho!! 🙂"
+        />
+
+        <Card
+          title="Angel Cullen"
+          description="Excelente servicio y calidad de los productos que ofrecen además de horarios flexibles... Super recomendado"
+        />
+
+        <Card
+          title="Alberto Muciño"
+          description="Muy buena atención con buena asesoria para compra de artículos de plomeria. Precios aceptables y tienen un buen surtido."
+        />
+
+        <Card
+          title="Josué Morales"
+          description="Extenso surtido y buena atención"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,82 @@
+---
+import HeroImage from '../assets/logo.png'
+import { Image } from 'astro:assets'
+---
+
+<section class="relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    {/* Hero content */}
+    <div class="pt-32 pb-12 md:pt-20 md:pb-20">
+      {/* Section header */}
+      <div class="text-center pb-12 md:pb-16">
+        <h1
+          class="text-5xl md:text-8xl font-bold leading-tighter tracking-tighter mb-4"
+          data-aos="zoom-y-out"
+        >
+          Eléctrica y Plomería{' '}
+          <span
+            class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400"
+          >
+            Hidalgo
+          </span>
+        </h1>
+        <div class="max-w-3xl mx-auto">
+          <p
+            class="text-xl text-stone-600 mb-8"
+            data-aos="zoom-y-out"
+            data-aos-delay="150"
+          >
+            Todo lo relacionado para su instalación eléctrica y de plomeria
+          </p>
+          <div
+            class="flex flex-col gap-2 md:flex-row justify-center items-center w-full"
+            data-aos="zoom-y-out"
+            data-aos-delay="300"
+          >
+            <a
+              class="btn rounded-md font-medium text-white bg-blue-600 hover:bg-blue-700 w-full md:w-fit"
+              href="#contactcard"
+            >
+              Contacto
+            </a>
+
+            <a
+              class="btn rounded-md font-medium text-white bg-stone-900 hover:bg-stone-800 w-full sm:w-auto sm:ml-4 inline-flex gap-4 justify-center items-center md:w-fit"
+              href="tel:+527353531683"
+            >
+              Llamar
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-phone"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                ></path></svg
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero image */}
+      <div>
+        <div
+          class="relative flex justify-center mb-8"
+          data-aos="zoom-y-out"
+          data-aos-delay="450"
+        >
+          <div class="flex flex-col justify-center">
+            <Image class="mx-auto md:w-1/3 w-1/2" src={HeroImage} alt="Hero" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

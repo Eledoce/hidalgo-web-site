@@ -1,0 +1,49 @@
+---
+import { ViewTransitions } from 'astro:transitions'
+import '@fontsource-variable/inter'
+const { title } = Astro.props
+import Header from '../components/Header.astro'
+import WhatsappButton from '../components/WhatsappButton.jsx'
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="font-inter min-h-screen relative">
+    <ViewTransitions />
+    <Header />
+    <WhatsappButton client:visible />
+    <div class="mt-">
+      <slot />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  .btn {
+    @apply px-10 py-3;
+  }
+
+  .h1 {
+    @apply text-4xl font-extrabold leading-tight tracking-tighter;
+  }
+
+  .h2 {
+    @apply text-3xl font-extrabold leading-tight tracking-tighter;
+  }
+
+  .h3 {
+    @apply text-3xl font-bold leading-tight;
+  }
+
+  .h4 {
+    @apply text-2xl font-bold leading-snug tracking-tight;
+  }
+</style>
