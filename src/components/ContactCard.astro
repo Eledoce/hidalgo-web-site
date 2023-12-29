@@ -1,5 +1,5 @@
 ---
-
+import WhatsA from './WhatsA.jsx'
 ---
 
 <div id="contactcard" class="w-full">
@@ -135,13 +135,7 @@
                 </li>
                 <!-- whatsapp -->
                 <li class="hover:underline">
-                  <a
-                    href={/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-                      ? 'whatsapp://send?phone=527351280629'
-                      : 'https://api.whatsapp.com/send?phone=527351280629'}
-                    aria-label="whatsapp"
-                    class="flex items-center"
-                  >
+                  <WhatsA client:visible className="bg-transparent flex ">
                     <div class="inline-block mr-5">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +159,7 @@
                       </svg>
                     </div>
                     <p>735 128 0629</p>
-                  </a>
+                  </WhatsA>
                 </li>
                 <!-- facebook -->
                 <li class="hover:underline">

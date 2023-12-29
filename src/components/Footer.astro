@@ -1,5 +1,5 @@
 ---
-
+import WhatsA from '../components/WhatsA.jsx'
 ---
 
 <footer>
@@ -19,12 +19,9 @@
       {/* Social links */}
       <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0">
         <li>
-          <a
-            href={/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
-              ? 'whatsapp://send?phone=527351280629'
-              : 'https://api.whatsapp.com/send?phone=527351280629'}
-            class="flex justify-center items-center text-stone-600 hover:text-stone-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out"
-            aria-label="whatsapp"
+          <WhatsA
+            client:visible
+            className="flex justify-center items-center text-stone-600 hover:text-stone-900 "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +41,7 @@
                 d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
               ></path>
             </svg>
-          </a>
+          </WhatsA>
         </li>
         <li class="ml-4">
           <a
