@@ -6,7 +6,7 @@ const opciones = [
 ---
 
 <nav
-  class="md:flex hidden justify-center items-center gap-3 px-5 font-medium text-stone-500"
+  class="md:flex hidden justify-center items-center gap-3 px-5 font-medium text-stone-500 navbar"
 >
   {
     opciones.map((op) => (
@@ -19,3 +19,12 @@ const opciones = [
     ))
   }
 </nav>
+
+<style is:global>
+  .active {
+    text-decoration: underline;
+    text-decoration-color: #3d83da;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 3px;
+  }
+</style>

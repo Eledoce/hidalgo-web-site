@@ -1,0 +1,23 @@
+---
+import LayoutHome from '../layouts/LayoutHome.astro'
+---
+
+<LayoutHome>
+  <h1>nosotros</h1>
+</LayoutHome>
+<script>
+  const nav = document.querySelector('.navbar')
+  const navLinks = nav.querySelectorAll('a')
+  const currentURL = window.location.href
+  navLinks.forEach((link) => {
+    console.log(
+      link.href,
+      currentURL,
+      link.href === currentURL,
+      '############################### from nos'
+    )
+    if (link.href === currentURL) {
+      link.classList.add('active')
+    }
+  })
+</script>

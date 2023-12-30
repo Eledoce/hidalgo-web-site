@@ -5,7 +5,7 @@ import logo from '../assets/logo.png'
 ---
 
 <header
-  class="sticky top-0 w-full z-50 bg-white md:bg-opacity-90 shadow-md inline-flex px-10 p-4 backdrop-blur-sm justify-between"
+  class="sticky top-0 w-full z-50 bg-white md:bg-opacity-90 inline-flex px-10 p-4 backdrop-blur-sm justify-between"
 >
   {/* Site branding */}
   <section class="flex-shrink-0 mr-4 inline-flex">
@@ -49,3 +49,25 @@ import logo from '../assets/logo.png'
     </ul>
   </section>
 </header>
+
+<style>
+  @keyframes sh {
+    from {
+      box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0);
+    }
+    to {
+      box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+  header {
+    view-timeline-name: --bar;
+    view-timeline-axis: block;
+
+    animation-timeline: --bar;
+    animation-name: sh;
+
+    animation-range: entry 10% cover 90%;
+    animation-fill-mode: both;
+    animation-delay: 500ms;
+  }
+</style>
