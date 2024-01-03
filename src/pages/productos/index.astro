@@ -1,21 +1,24 @@
 ---
 import Layout from '../../layouts/LayoutHome.astro'
+import Naveg from '../../components/prods/Naveg.astro'
+import Plomeria from '../../components/prods/Plomeria.astro'
+import Electricidad from '../../components/prods/Electricidad.astro'
+import Herramienta from '../../components/prods/Herramienta.astro'
 ---
 
 <Layout>
-  <main>productos</main>
+  <main class="">
+    <Naveg />
+    <Plomeria />
+    <Electricidad />
+    <Herramienta />
+  </main>
   <script>
     document.addEventListener('astro:page-load', () => {
       const nav = document.querySelector('.navbar')
       const navLinks = nav.querySelectorAll('a')
       const currentURL = window.location.href
       navLinks.forEach((link) => {
-        console.log(
-          link.href,
-          currentURL,
-          link.href === currentURL,
-          '############################### from prods'
-        )
         if (link.href === currentURL) {
           link.classList.add('active')
         }
@@ -23,3 +26,21 @@ import Layout from '../../layouts/LayoutHome.astro'
     })
   </script>
 </Layout>
+
+<style is:global>
+  .sectionProds {
+    @apply w-auto h-screen mt-5 mx-32;
+  }
+  .sectionCards {
+    @apply grid grid-cols-2 md:grid-cols-5 gap-5;
+  }
+  .aProds {
+    @apply hover:text-blue-400 hover:underline underline-offset-4 font-semibold text-lg;
+  }
+  .cardProds {
+    @apply border border-stone-100 h-52 hover:shadow-xl transition-shadow;
+  }
+  .h1Prods {
+    @apply text-3xl font-semibold mb-5;
+  }
+</style>
