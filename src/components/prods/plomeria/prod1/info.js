@@ -8,7 +8,7 @@ const info = {
   cover: img,
   images: [img, img1],
 
-  title: 'cable uso rudo',
+  title: 'Cable uso rudo',
   description: 'Rudo de 1/2 pulgada',
 }
 export default info

@@ -1,44 +1,46 @@
 ---
 import { Image } from 'astro:assets'
-import yo from '../../components/prods/plomeria/prod1/rudo.webp'
-import yo1 from '../../components/prods/plomeria/prod2/flotador.webp'
 import LayoutHome from '../../layouts/LayoutHome.astro'
-export const getStaticPaths = () => {
-  return [
-    {
+import Naveg from '../../components/prods/Naveg.astro'
+
+export const getStaticPaths = async () => {
+  const prods = await Astro.glob('../../components/prods/**/*.js')
+  const routes = prods.map((prod) => {
+    const { ob } = prod.default
+    return {
       params: {
-        ob: 'uno',
+        ob,
       },
       props: {
-        title: 'titulo uno',
-        img: yo,
+        title: prod.default.title,
+        img: prod.default.cover,
+        description: prod.default.description,
       },
-    },
-    {
-      params: {
-        ob: 'dos',
-      },
-      props: {
-        title: 'titulo dos',
-        img: yo1,
-      },
-    },
-  ]
+    }
+  })
+
+  return routes
 }
 const { ob } = Astro.params
-const { title, img } = Astro.props
+const { title, img, description } = Astro.props
 ---
 
 <LayoutHome>
-  <div class="text-5xl p-10">
+  <Naveg />
+  <main class="h-screen">
     <a href="/productos">regresar</a>
-    <p>
-      {ob ? ob : 'no ob'}
-    </p>
-    <p>
-      {title ? title : 'no title'}
-    </p>
-
-    <Image src={img} alt="yo" class="w-52" />
-  </div>
+    <div class="p-10 flex">
+      <div class="border w-1/2 h-full">
+        <Image src={img} alt="yo" class="h-full mx-auto p-5" />
+      </div>
+      <div class="w-1/2 p-5">
+        <h3 class="text-3xl font-semibold">
+          {title ? title : 'no title'}
+        </h3>
+        <p>
+          {description}
+        </p>
+      </div>
+    </div>
+  </main>
 </LayoutHome>
