@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets'
+import yo from '../../components/prods/plomeria/prod1/rudo.webp'
+import yo1 from '../../components/prods/plomeria/prod2/flotador.webp'
+import LayoutHome from '../../layouts/LayoutHome.astro'
+export const getStaticPaths = () => {
+  return [
+    {
+      params: {
+        ob: 'uno',
+      },
+      props: {
+        title: 'titulo uno',
+        img: yo,
+      },
+    },
+    {
+      params: {
+        ob: 'dos',
+      },
+      props: {
+        title: 'titulo dos',
+        img: yo1,
+      },
+    },
+  ]
+}
+const { ob } = Astro.params
+const { title, img } = Astro.props
+---
+
+<LayoutHome>
+  <div class="text-5xl p-10">
+    <a href="/productos">regresar</a>
+    <p>
+      {ob ? ob : 'no ob'}
+    </p>
+    <p>
+      {title ? title : 'no title'}
+    </p>
+
+    <Image src={img} alt="yo" class="w-52" />
+  </div>
+</LayoutHome>

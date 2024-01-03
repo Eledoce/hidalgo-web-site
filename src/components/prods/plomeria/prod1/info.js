@@ -1,0 +1,14 @@
+import img from './rudo.webp'
+import img1 from './rudo1.webp'
+
+console.log('importando archivo 1')
+
+const info = {
+  ob: 'uno',
+  cover: img,
+  images: [img, img1],
+
+  title: 'cable uso rudo',
+  description: 'Rudo de 1/2 pulgada',
+}
+export default info

@@ -1,17 +1,24 @@
 ---
 import Card from './Card.astro'
 
-import rudo from '../../assets/prods/electrico/rudo.webp'
+const yo = await Astro.glob('./plomeria/*/*.js')
+
+console.log(yo[0].default.img)
 ---
 
 <section id="plomeria" class="sectionProds">
   <h1 class="h1Prods">Plomería</h1>
 
   <div class="sectionCards">
-    <Card img={rudo} />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    {
+      yo.map((item) => (
+        <Card
+          img={item.default.cover}
+          title={item.default.title}
+          ob={item.default.ob}
+          route={`/productos/${item.default.ob}`}
+        />
+      ))
+    }
   </div>
 </section>
