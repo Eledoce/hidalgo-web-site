@@ -4,7 +4,7 @@ import img1 from './rudo1.webp'
 console.log('importando archivo 1')
 
 const info = {
-  ob: 'uno',
+  id: 'uno',
   cover: img,
   images: [img, img1],
 

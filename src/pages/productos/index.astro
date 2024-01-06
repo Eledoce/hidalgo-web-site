@@ -10,7 +10,9 @@ import Herramienta from '../../components/prods/Herramienta.astro'
   <main class="">
     <Naveg />
     <Plomeria />
+    <div id="electricidad" class="h-16"></div>
     <Electricidad />
+    <div id="herramientas" class="h-16"></div>
     <Herramienta />
   </main>
   <script>
@@ -34,9 +36,7 @@ import Herramienta from '../../components/prods/Herramienta.astro'
   .sectionCards {
     @apply grid grid-cols-2 md:grid-cols-5 gap-5;
   }
-  .aProds {
-    @apply hover:text-blue-400 hover:underline underline-offset-4 font-semibold text-lg;
-  }
+
   .cardProds {
     @apply border border-stone-100 h-52 hover:shadow-xl transition-shadow;
   }

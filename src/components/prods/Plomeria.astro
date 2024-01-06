@@ -1,22 +1,20 @@
 ---
 import Card from './Card.astro'
 
-const yo = await Astro.glob('./plomeria/*/*.js')
-
-console.log(yo[0].default.img)
+const productos = await Astro.glob('./plomeria/*/*.js')
 ---
 
-<section id="plomeria" class="sectionProds">
+<section class="sectionProds">
   <h1 class="h1Prods">Plomería</h1>
 
   <div class="sectionCards">
     {
-      yo.map((item) => (
+      productos.map((item) => (
         <Card
           img={item.default.cover}
           title={item.default.title}
-          ob={item.default.ob}
-          route={`/productos/${item.default.ob}`}
+          ob={item.default.id}
+          route={`/productos/${item.default.id}`}
         />
       ))
     }

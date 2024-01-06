@@ -1,0 +1,110 @@
+---
+import { Image } from 'astro:assets'
+import LayoutHome from '../../layouts/LayoutHome.astro'
+import Naveg from '../../components/prods/Naveg.astro'
+
+export const getStaticPaths = async () => {
+  const prods = await Astro.glob('../../components/prods/**/*.js')
+  const routes = prods.map((prod) => {
+    const { id } = prod.default
+    return {
+      params: {
+        id,
+      },
+      props: {
+        title: prod.default.title,
+        img: prod.default.cover,
+        description: prod.default.description,
+        tecnicalData: prod.default.tecnicalData,
+        brand: prod.default.brand,
+        technicalFile: prod.default.technicalFile,
+      },
+    }
+  })
+
+  return routes
+}
+const { id } = Astro.params
+const { title, img, description, tecnicalData, technicalFile } = Astro.props
+---
+
+<LayoutHome>
+  <Naveg />
+  <main class="pb-10">
+    <a
+      href="/productos"
+      class="bg-emerald-700 text-white font-bold px-4 py-3 rounded-r-lg hover:pl-10 transition-all hover:shadow-lg"
+    >
+      {`<-`} regresar</a
+    >
+    <div class="p-10 flex">
+      <section class="w-1/2 h-full">
+        <Image src={img} alt="yo" class="h-full mx-auto p-5" />
+      </section>
+      <section class="w-1/2 p-5">
+        <h3 class="text-3xl font-semibold pb-5">
+          {title ? title : 'no title'}
+        </h3>
+        <p class="text-ellipsis whitespace-pre-line">
+          {description}
+        </p>
+      </section>
+    </div>
+    <!-- technical file & technical data -->
+    <section class="w-2/3 mx-auto flex p-5 justify-between items-center">
+      {
+        tecnicalData ? (
+          <div class="mt-5">
+            <h3 class="text-2xl font-semibold pb-2">Otros datos</h3>
+            <ul class="list-disc list-inside">
+              {tecnicalData.map((data) => (
+                <li>{data}</li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          ''
+        )
+      }
+      {
+        technicalFile ? (
+          <a
+            class="rounded-xl px-5 py-2 w-fit h-fit bg-blue-500 text-white font-semibold text-xl inline-flex gap-2 items-center hover:bg-blue-800 transition-colors "
+            href={technicalFile}
+            target="_blank"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-file-filled"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+                <path
+                  d="M19 7h-4l-.001 -4.001z"
+                  stroke-width="0"
+                  fill="currentColor"
+                />
+              </>
+            </svg>
+            Ficha Téctnica
+          </a>
+        ) : (
+          ''
+        )
+      }
+    </section>
+  </main>
+</LayoutHome>

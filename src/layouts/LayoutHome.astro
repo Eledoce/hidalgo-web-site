@@ -4,6 +4,7 @@ import '@fontsource-variable/inter'
 const { title } = Astro.props
 import Header from '../components/Header.astro'
 import WhatsappButton from '../components/WhatsA'
+import Footer from '../components/home/Footer.astro'
 ---
 
 <!doctype html>
@@ -46,6 +47,7 @@ import WhatsappButton from '../components/WhatsA'
     <div class="">
       <slot />
     </div>
+    <Footer />
     <style is:global>
       .btn {
         @apply px-10 py-3;
