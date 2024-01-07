@@ -31,18 +31,19 @@ const { title, img, description, tecnicalData, technicalFile } = Astro.props
 
 <LayoutHome>
   <Naveg />
-  <main class="pb-10">
+  <main class="pb-10 mt-4">
     <a
       href=`${url}/productos`
-      class="bg-emerald-700 text-white font-bold px-4 py-3 rounded-r-lg hover:pl-10 transition-all hover:shadow-lg"
+      class="bg-emerald-700 hover:text-emerald-200 text-white font-bold px-4 py-3 rounded-r-lg hover:pl-10 transition-all hover:shadow-lg fixed top-40 z-50 md:top-28"
     >
       {`<-`} regresar</a
     >
-    <div class="p-10 flex">
-      <section class="w-1/2 h-full">
+    <!-- img title descrip -->
+    <div class="p-10 flex flex-col md:flex-row">
+      <section class="w-full md:w-1/2 md:h-full">
         <Image src={img} alt="yo" class="h-full mx-auto p-5" />
       </section>
-      <section class="w-1/2 p-5">
+      <section class="md:w-1/2 md:p-5">
         <h3 class="text-3xl font-semibold pb-5">
           {title ? title : 'no title'}
         </h3>
@@ -52,7 +53,9 @@ const { title, img, description, tecnicalData, technicalFile } = Astro.props
       </section>
     </div>
     <!-- technical file & technical data -->
-    <section class="w-2/3 mx-auto flex p-5 justify-between items-center">
+    <section
+      class="md:w-2/3 md:mx-auto flex md:flex-row flex-col p-10 md:p-5 gap-6 md:gap-0 justify-between items-center"
+    >
       {
         tecnicalData ? (
           <div class="mt-5">

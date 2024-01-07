@@ -7,7 +7,7 @@ import Herramienta from '../../components/prods/Herramienta.astro'
 ---
 
 <Layout>
-  <main class="">
+  <main class="pb-32">
     <Naveg />
     <Plomeria />
     <div id="electricidad" class="h-16"></div>
@@ -31,7 +31,7 @@ import Herramienta from '../../components/prods/Herramienta.astro'
 
 <style is:global>
   .sectionProds {
-    @apply w-auto h-screen mt-5 mx-32;
+    @apply w-auto h-screen mt-5 md:mx-32 mx-5;
   }
   .sectionCards {
     @apply grid grid-cols-2 md:grid-cols-5 gap-5;

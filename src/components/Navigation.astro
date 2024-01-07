@@ -3,14 +3,14 @@ import { url } from '../scripts/url'
 ---
 
 <nav
-  class="md:flex hidden justify-center items-center gap-3 px-5 font-medium text-stone-500 navbar"
+  class="inline-flex justify-center items-center gap-3 px-5 font-medium text-stone-500 navbar"
 >
   <a href=`${url}/`>Inicio</a>
   <a href=`${url}/productos`>Productos</a>
   <a href=`${url}/nosotros`>Quienes somos</a>
 </nav>
 
-<style is:global>
+<style>
   .active {
     text-decoration: underline;
     text-decoration-color: #3d83da;
