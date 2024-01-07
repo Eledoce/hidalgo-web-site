@@ -9,16 +9,9 @@ const opciones = [
 <nav
   class="md:flex hidden justify-center items-center gap-3 px-5 font-medium text-stone-500 navbar"
 >
-  {
-    opciones.map((op) => (
-      <a
-        class="hover:text-stone-800 hover:underline hover:underline-offset-4"
-        href={op.href}
-      >
-        {op.text}
-      </a>
-    ))
-  }
+  <a href="/">Inicio</a>
+  <a href="/productos">Productos</a>
+  <a href="/nosotros">Quienes somos</a>
 </nav>
 
 <style is:global>
@@ -27,5 +20,8 @@ const opciones = [
     text-decoration-color: #3d83da;
     text-underline-offset: 4px;
     text-decoration-thickness: 3px;
+  }
+  a {
+    @apply hover:text-stone-800 hover:underline hover:underline-offset-4;
   }
 </style>
