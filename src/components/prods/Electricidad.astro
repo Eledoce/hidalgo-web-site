@@ -12,7 +12,7 @@ const productos = await Astro.glob('./electricidad/*/*.js')
           img={item.default.cover}
           title={item.default.title}
           ob={item.default.id}
-          route={`/productos/${item.default.id}`}
+          brand={item.default.brand}
         />
       ))
     }

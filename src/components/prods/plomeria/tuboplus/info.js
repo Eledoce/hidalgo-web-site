@@ -3,6 +3,7 @@ import img from './tubo.png'
 const info = {
   id: 'tubo-plus',
   cover: img,
+  brand: 'Tuboplus',
   title: 'Tuboplus Hidráulico (PP-R)',
   description: `Tuboplus Hidráulico (PP-R) es un miembro de la familia Rotoplas la cual ha sido concebida como un sistema integral, ya que cuenta una gran variedad de tubería y conexiones, para cubrir todas las necesidades de una instalación hidráulica
   

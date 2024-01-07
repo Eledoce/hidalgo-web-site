@@ -71,7 +71,7 @@ const { title, img, description, tecnicalData, technicalFile } = Astro.props
         technicalFile ? (
           <a
             class="rounded-xl px-5 py-2 w-fit h-fit bg-blue-500 text-white font-semibold text-xl inline-flex gap-2 items-center hover:bg-blue-800 transition-colors "
-            href={technicalFile}
+            href={`${url}${technicalFile}`}
             target="_blank"
           >
             <svg

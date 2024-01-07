@@ -22,6 +22,7 @@ const info = {
     'Longitud: 100 m',
     'Marca: IUSA',
   ],
+  technicalFile: '/fichasTecnicas/electricidad/thw-iusa.pdf',
 }
 
 export default info
