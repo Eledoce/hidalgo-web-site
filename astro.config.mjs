@@ -7,5 +7,5 @@ import react from '@astrojs/react'
 export default defineConfig({
   integrations: [tailwind(), react()],
   site: 'https://eledoce.github.io/hidalgo-web-site/',
-  base: '/hidalgo-web-site/',
+  base: 'https://eledoce.github.io//hidalgo-web-site/',
 })
