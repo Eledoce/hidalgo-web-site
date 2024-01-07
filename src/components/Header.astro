@@ -2,6 +2,7 @@
 import Navigation from '../components/Navigation.astro'
 import { Image } from 'astro:assets'
 import logo from '../assets/logo.png'
+import { url } from '../scripts/url'
 ---
 
 <header
@@ -10,7 +11,7 @@ import logo from '../assets/logo.png'
   {/* Site branding */}
   <section class="flex-shrink-0 mr-4 inline-flex">
     {/* Logo */}
-    <a class="flex text-transparent" aria-label="Cruip" href="/">
+    <a class="flex text-transparent" aria-label="Cruip" href=`${url}/`>
       <div
         class="h-10 w-10 bg-gradient-to-br from-blue-500 to-teal-300 rounded-full transition-opacity delay-300"
       >

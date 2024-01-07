@@ -1,10 +1,11 @@
 ---
 const { img, title, description, ob, route } = Astro.props
 import { Image } from 'astro:assets'
+import { url } from '../../scripts/url'
 ---
 
 <section class="cardProds relative">
-  <a href={`/productos/${ob}`}>
+  <a href={`${url}/productos/${ob}`}>
     <div class="bg-stone-100 h-2/3">
       {img && <Image src={img} alt="cable" class="h-full object-cover" />}
     </div>

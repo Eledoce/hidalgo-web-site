@@ -6,6 +6,6 @@ import react from '@astrojs/react'
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site: 'https://eledoce.github.io/hidalgo-web-site/',
-  base: 'https://eledoce.github.io//hidalgo-web-site/',
+  site: 'https://eledoce.github.io/',
+  base: '/hidalgo-web-site/',
 })

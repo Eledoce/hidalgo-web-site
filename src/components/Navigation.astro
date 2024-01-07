@@ -1,17 +1,13 @@
 ---
-const opciones = [
-  { text: 'Inicio', href: '/' },
-  { text: 'Productos', href: '/productos' },
-  { text: 'Quienes somos', href: '/nosotros' },
-]
+import { url } from '../scripts/url'
 ---
 
 <nav
   class="md:flex hidden justify-center items-center gap-3 px-5 font-medium text-stone-500 navbar"
 >
-  <a href="/">Inicio</a>
-  <a href="/productos">Productos</a>
-  <a href="/nosotros">Quienes somos</a>
+  <a href=`${url}/`>Inicio</a>
+  <a href=`${url}/productos`>Productos</a>
+  <a href=`${url}/nosotros`>Quienes somos</a>
 </nav>
 
 <style is:global>

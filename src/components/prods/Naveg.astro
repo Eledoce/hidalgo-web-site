@@ -1,11 +1,11 @@
 ---
-
+import { url } from '../../scripts/url'
 ---
 
 <nav class="bg-stone-950 text-white py-1 flex gap-8 justify-center">
-  <a href="/productos/" class="aProds">Plomería</a>
-  <a href="/productos/#electricidad" class="aProds">Electricidad</a>
-  <a href="/productos/#herramientas" class="aProds">Herramientas</a>
+  <a href=`${url}/productos` class="aProds">Plomería</a>
+  <a href=`${url}/productos/#electricidad` class="aProds">Electricidad</a>
+  <a href=`${url}/productos/#herramientas` class="aProds">Herramientas</a>
 </nav>
 <style>
   .aProds {
