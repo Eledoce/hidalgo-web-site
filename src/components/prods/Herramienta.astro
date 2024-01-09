@@ -1,14 +1,21 @@
 ---
 import Card from './Card.astro'
+
+const productos = await Astro.glob('./herramientas/*/*.js')
 ---
 
 <section class="sectionProds">
   <h1 class="h1Prods">Herramienta</h1>
   <div class="sectionCards">
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    {
+      productos.map((item) => (
+        <Card
+          img={item.default.cover}
+          title={item.default.title}
+          ob={item.default.id}
+          brand={item.default.brand}
+        />
+      ))
+    }
   </div>
 </section>

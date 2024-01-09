@@ -6,7 +6,7 @@ import Electricidad from '../../components/prods/Electricidad.astro'
 import Herramienta from '../../components/prods/Herramienta.astro'
 ---
 
-<Layout>
+<Layout title="Hidalgo | Productos">
   <main class="pb-32">
     <Naveg />
     <Plomeria />
@@ -31,7 +31,7 @@ import Herramienta from '../../components/prods/Herramienta.astro'
 
 <style is:global>
   .sectionProds {
-    @apply w-auto h-screen mt-5 md:mx-32 mx-5;
+    @apply w-auto h-full mt-5 md:mx-32 mx-5;
   }
   .sectionCards {
     @apply grid grid-cols-2 md:grid-cols-5 gap-5;

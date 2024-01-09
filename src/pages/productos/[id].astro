@@ -26,10 +26,11 @@ export const getStaticPaths = async () => {
   return routes
 }
 const { id } = Astro.params
-const { title, img, description, tecnicalData, technicalFile } = Astro.props
+const { title, img, description, tecnicalData, technicalFile, brand } =
+  Astro.props
 ---
 
-<LayoutHome>
+<LayoutHome title={title}>
   <Naveg />
   <main class="pb-10 mt-4">
     <a
@@ -41,12 +42,23 @@ const { title, img, description, tecnicalData, technicalFile } = Astro.props
     <!-- img title descrip -->
     <div class="p-10 flex flex-col md:flex-row">
       <section class="w-full md:w-1/2 md:h-full">
-        <Image src={img} alt="yo" class="h-full mx-auto p-5" />
+        <Image
+          src={img}
+          alt="yo"
+          class="h-full mx-auto p-5"
+          transition:name={id}
+        />
       </section>
       <section class="md:w-1/2 md:p-5">
-        <h3 class="text-3xl font-semibold pb-5">
+        <h3 class="text-3xl font-semibold pb-5" transition:name={title}>
           {title ? title : 'no title'}
         </h3>
+        <p
+          class="p-2 bg-blue-600 text-xl text-white font-bold w-fit rounded-xl px-5 mb-3"
+          transition:name={`${brand}${id}`}
+        >
+          {brand}
+        </p>
         <p class="text-ellipsis whitespace-pre-line">
           {description}
         </p>
